@@ -363,6 +363,39 @@
       position: relative;
       padding: 24px 12px 24px 36px;
       border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .timeline-item:hover .timeline-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(8, 8, 8, 0.8), 0 0 12px var(--accent-glow);
+      transform: scale(1.2);
+    }
+
+    .timeline-item:hover h3 {
+      color: #fff;
+    }
+
+    .timeline-item:hover .exp-period {
+      color: #2dd4bf;
+    }
+
+    .timeline-item:hover .exp-header-row .exp-period {
+      color: var(--text-secondary);
+    }
+
+    .timeline-item:hover .role-badge {
+      background: rgba(13, 148, 136, 0.12);
+      color: var(--accent);
+      border-color: rgba(13, 148, 136, 0.3);
+    }
+
+    .timeline-item:hover .exp-desc {
+      color: #d4d4d8;
     }
 
     .timeline-item + .timeline-item {
@@ -740,7 +773,7 @@
               <div>
                 <div class="exp-header">
                   <h3>Nunchuk</h3>
-                  <span class="exp-period">Sep 2024 — Present</span>
+                  <span class="exp-period">Aug 2025 — Present</span>
                 </div>
                 <div class="exp-body">
                   <span class="role-badge">Product Designer</span>
