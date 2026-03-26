@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tran Quang Vinh — Senior UI/UX Designer</title>
+  <title>Tran Quang Vinh — Senior Product Designer</title>
+  <meta name="description" content="Senior Product Designer with 8+ years of experience in product design, from biotech to fintech. Currently at Athos Therapeutics & Nunchuk.">
+  <meta property="og:title" content="Tran Quang Vinh — Senior Product Designer">
+  <meta property="og:description" content="Senior Product Designer with 8+ years of experience in product design, from biotech to fintech.">
+  <meta property="og:image" content="https://ptom2812.github.io/CV/avatar.jpg">
+  <meta property="og:url" content="https://ptom2812.github.io/CV/">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>V</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
@@ -54,22 +61,21 @@
 
     /* ==================== SIDEBAR ==================== */
     .sidebar {
-      width: 380px;
-      min-width: 380px;
+      width: 420px;
+      min-width: 420px;
       flex-shrink: 0;
-      background: rgba(24, 26, 27, 0.7);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 32px 32px;
+      background: #1e2123;
+      border-right: 1px solid rgba(63, 63, 70, 0.2);
+      padding: 40px 40px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
       position: sticky;
       top: 0;
       height: 100vh;
       overflow-y: auto;
       z-index: 2;
+      box-shadow: -100vw 0 0 100vw #1e2123;
     }
 
     /* Hide scrollbar for sidebar */
@@ -298,7 +304,7 @@
       flex: 1;
       min-width: 0;
       padding: 48px 64px 80px 48px;
-      background: transparent;
+      background: radial-gradient(ellipse at 30% 20%, rgba(13, 148, 136, 0.04) 0%, transparent 60%);
       position: relative;
       z-index: 1;
     }
@@ -567,11 +573,19 @@
     .timeline-item:nth-child(6) { animation-delay: 0.7s; }
 
     /* ==================== RESPONSIVE ==================== */
-    @media (max-width: 1100px) {
-      .main-content { padding: 48px 36px; }
-      .timeline-grid { grid-template-columns: 1fr; gap: 24px; }
+
+    /* Wide screens: 2-col for Athos/Nunchuk */
+    @media (min-width: 1800px) {
+      .layout { max-width: 1800px; }
+      .timeline-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
     }
 
+    @media (min-width: 1600px) {
+      .layout { max-width: 1600px; padding-right: 60px; }
+      .main-content > .content-wrapper { max-width: none; }
+    }
+
+    /* Desktop down */
     @media (max-width: 1440px) {
       .layout { padding-right: 48px; }
     }
@@ -580,17 +594,8 @@
       .layout { padding-right: 32px; }
     }
 
-    /* 2-col grid only on very wide screens */
-    .timeline-grid { grid-template-columns: 1fr; gap: 24px; }
-
-    @media (min-width: 1600px) {
-      .layout { max-width: 1600px; padding-right: 60px; }
-      .main-content > .content-wrapper { max-width: none; }
-    }
-
-    @media (min-width: 1800px) {
-      .timeline-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .layout { max-width: 1800px; }
+    @media (max-width: 1100px) {
+      .main-content { padding: 48px 36px; }
     }
 
     @media (max-width: 1000px) {
@@ -625,6 +630,14 @@
       .connect-link { padding: 6px 8px; }
       .avatar { width: 100px; height: 100px; }
     }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -642,7 +655,7 @@
 
       <div class="name-block">
         <h1>Tran Quang Vinh</h1>
-        <div class="title">Senior UI/UX Designer</div>
+        <div class="title">Senior Product Designer</div>
       </div>
 
       <div class="about-section">
@@ -673,7 +686,7 @@
               <span class="value">linkedin.com/in/vinhtran2812</span>
             </div>
           </a>
-          <div class="connect-link copyable" onclick="copyToClipboard('q.vinh2812@gmail.com', this)" role="button" tabindex="0">
+          <div class="connect-link copyable" onclick="copyToClipboard('q.vinh2812@gmail.com', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyToClipboard('q.vinh2812@gmail.com', this)}" role="button" tabindex="0" aria-label="Copy email to clipboard">
             <div class="icon">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </div>
@@ -683,7 +696,7 @@
             </div>
             <span class="copy-toast">Copied!</span>
           </div>
-          <div class="connect-link copyable" onclick="copyToClipboard('(+84) 931 801 181', this)" role="button" tabindex="0">
+          <div class="connect-link copyable" onclick="copyToClipboard('(+84) 931 801 181', this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyToClipboard('(+84) 931 801 181', this)}" role="button" tabindex="0" aria-label="Copy phone number to clipboard">
             <div class="icon">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </div>
@@ -851,7 +864,7 @@
         </div>
 
         <div class="footer">
-          <p>Designed with Google Stitch — Built with Claude Code</p>
+          <p>Designed with <a href="https://stitch.withgoogle.com/" target="_blank" rel="noopener noreferrer">Google Stitch</a> — Built with <a href="https://claude.ai/code" target="_blank" rel="noopener noreferrer">Claude Code</a></p>
         </div>
       </div>
     </main>
